@@ -1,0 +1,316 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f4f8fb;
+    color: #222;
+}
+nav {
+    background: #1976d2;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav ul li a:hover {
+    color: #90caf9;
+}
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.book-card {
+    background: #e3f2fd;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.08);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.book-card:hover {
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+}
+.book-card img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+.book-card h3 {
+    margin: 0.5rem 0 0.2rem 0;
+    font-size: 1.1rem;
+}
+.book-card .author {
+    color: #1976d2;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+.book-card .price {
+    font-weight: bold;
+    color: #388e3c;
+    margin-bottom: 0.5rem;
+}
+.book-card button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.book-card button:hover {
+    background: #1565c0;
+}
+#book-detail-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #e3f2fd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+#book-detail img {
+    width: 120px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+#book-detail h2 {
+    margin: 0.5rem 0 0.2rem 0;
+}
+#book-detail .author {
+    color: #1976d2;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+#book-detail .price {
+    font-weight: bold;
+    color: #388e3c;
+    margin-bottom: 0.5rem;
+}
+#book-detail .desc {
+    margin-bottom: 1rem;
+}
+button#back-to-list {
+    background: none;
+    border: none;
+    color: #1976d2;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(25, 118, 210, 0.18);
+    min-width: 300px;
+    position: relative;
+}
+.modal-content .close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #1976d2;
+    cursor: pointer;
+}
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #b3c6e0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+form button {
+    width: 100%;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #1565c0;
+}
+.error {
+    color: #d32f2f;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+@media (max-width: 600px) {
+    main {
+        padding: 0.5rem;
+    }
+    .modal-content {
+        padding: 1rem 0.5rem;
+        min-width: 90vw;
+    }
+    .book-list {
+        grid-template-columns: 1fr;
+    }
+}
+#book-modal textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #b3c6e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+#book-modal input[type="file"] {
+    margin: 0.5rem 0;
+}
+#book-detail-section .admin-heading {
+    color: #1976d2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#book-detail-section .user-heading {
+    color: #388e3c;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#checkout-modal input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #b3c6e0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+#checkout-modal button {
+    width: 100%;
+    background: #388e3c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#checkout-modal button:hover {
+    background: #2e7d32;
+}
+#checkout-modal #checkout-total {
+    color: #d32f2f;
+    font-size: 1.2rem;
+}
+#checkout-modal #checkout-book-info {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+#cart-modal #cart-list {
+    margin: 1rem 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+#cart-modal .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    background: #e3f2fd;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+}
+#cart-modal .cart-item img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+#cart-modal .cart-item .cart-title {
+    font-weight: bold;
+}
+#cart-modal .cart-item .cart-qty {
+    margin: 0 0.5rem;
+    width: 40px;
+    text-align: center;
+}
+#cart-modal .cart-item button {
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#cart-modal #cart-checkout-btn {
+    width: 100%;
+    background: #388e3c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#cart-modal #cart-checkout-btn:hover {
+    background: #2e7d32;
+}
+#cart-modal #cart-total {
+    color: #d32f2f;
+    font-size: 1.1rem;
+} 

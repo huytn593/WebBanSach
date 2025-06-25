@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Bán Sách</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Web Bán Sách</div>
+        <ul id="nav-links">
+            <li><a href="#" id="nav-books">Sách</a></li>
+            <li><a href="#" id="nav-history" style="display:none">Lịch sử mua</a></li>
+            <li><a href="#" id="nav-revenue" style="display:none">Doanh thu</a></li>
+            <li><a href="#" id="nav-login">Đăng nhập</a></li>
+            <li><a href="#" id="nav-register">Đăng ký</a></li>
+            <li><a href="#" id="nav-logout" style="display:none">Đăng xuất</a></li>
+            <li><a href="#" id="nav-cart" style="display:none">Giỏ hàng</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="book-list-section">
+            <h2>Danh sách sách</h2>
+            <div id="book-list" class="book-list"></div>
+        </section>
+        <section id="book-detail-section" style="display:none">
+            <button id="back-to-list">← Quay lại</button>
+            <div id="book-detail"></div>
+        </section>
+        <section id="history-section" style="display:none">
+            <h2>Lịch sử mua</h2>
+            <div id="history-list"></div>
+        </section>
+        <section id="revenue-section" style="display:none">
+            <h2>Doanh thu</h2>
+            <div id="revenue-value"></div>
+        </section>
+    </main>
+    <!-- Modal Đăng nhập -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>Đăng nhập</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Tên đăng nhập" required>
+                <input type="password" id="login-password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng nhập</button>
+            </form>
+            <div id="login-error" class="error"></div>
+        </div>
+    </div>
+    <!-- Modal Đăng ký -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close" id="close-register">&times;</span>
+            <h2>Đăng ký</h2>
+            <form id="register-form">
+                <input type="text" id="register-username" placeholder="Tên đăng nhập" required>
+                <input type="password" id="register-password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng ký</button>
+            </form>
+            <div id="register-error" class="error"></div>
+        </div>
+    </div>
+    <div class="modal" id="book-modal">
+        <div class="modal-content">
+            <span class="close" id="close-book-modal">&times;</span>
+            <h2 id="book-modal-title">🛠 Chế độ Quản trị viên: Thêm/Sửa sách</h2>
+            <form id="book-form">
+                <input type="text" id="book-title" placeholder="Tiêu đề" required>
+                <input type="text" id="book-author" placeholder="Tác giả" required>
+                <input type="number" id="book-price" placeholder="Giá tiền" min="0" required>
+                <textarea id="book-description" placeholder="Mô tả" rows="3"></textarea>
+                <input type="file" id="book-image-file" accept="image/*">
+                <input type="text" id="book-image-url" placeholder="Hoặc dán URL ảnh">
+                <button type="submit" id="book-form-submit">Lưu sách</button>
+            </form>
+            <div id="book-form-error" class="error"></div>
+        </div>
+    </div>
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close" id="close-checkout-modal">&times;</span>
+            <h2>Thanh toán đơn hàng</h2>
+            <form id="checkout-form">
+                <input type="text" id="checkout-name" placeholder="Họ tên người nhận" required>
+                <input type="tel" id="checkout-phone" placeholder="Số điện thoại" required pattern="[0-9]{10,11}">
+                <input type="text" id="checkout-address" placeholder="Địa chỉ nhận hàng" required>
+                <div id="checkout-book-info"></div>
+                <div>Phí ship: <b id="checkout-ship">30,000 đ</b></div>
+                <div>Tổng tiền: <b id="checkout-total"></b></div>
+                <button type="submit">Thanh toán</button>
+            </form>
+            <div id="checkout-error" class="error"></div>
+        </div>
+    </div>
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart-modal">&times;</span>
+            <h2>Giỏ hàng của bạn</h2>
+            <div id="cart-list"></div>
+            <div id="cart-total" style="margin:1rem 0;font-weight:bold;"></div>
+            <button id="cart-checkout-btn">Thanh toán tất cả</button>
+            <div id="cart-error" class="error"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
