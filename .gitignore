@@ -1,0 +1,34 @@
+# Build
+bin/
+obj/
+
+# User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider/JetBrains
+.idea/
+
+# Visual Studio
+.vs/
+
+# Logs
+*.log
+
+# Storage uploads
+WebBanSach/storage/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Publish
+publish/
